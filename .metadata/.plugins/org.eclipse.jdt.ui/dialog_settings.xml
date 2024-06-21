@@ -32,4 +32,12 @@
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 		<item key="updateTextualMatches" value="false"/>
 	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item key="accessorName" value="Messages"/>
+			<item key="accessorPackage" value="=Linked_List/src&lt;singlylist"/>
+			<item key="bundleName" value="messages.properties"/>
+			<item key="bundlePackage" value="=Linked_List/src&lt;singlylist"/>
+		</section>
+	</section>
 </section>
