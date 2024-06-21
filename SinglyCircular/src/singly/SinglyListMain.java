@@ -2,6 +2,8 @@
 
 import java.util.Scanner;
 
+
+
 class SinglyCircularList{
 	//Node class
 	static class Node{
@@ -149,6 +151,29 @@ class SinglyCircularList{
 		  temp.next=trav.next;
 		  //trav node will be garbage collected
 	}
+	public void delLast() {
+		//special 1:if list is empty throw exception
+		if(head==head)
+			throw new RuntimeException("List is Empty");
+		//special 2:if list has single node,make head head
+		if(head.next==head)
+			head=null;
+		else {
+		Node temp=null,trav=head;
+		//traverse till last node(trav)and run temp behind it
+		while(trav.next!=head) {
+			temp=trav;
+			trav=trav.next;
+		}
+		//when last node (trav) is deleted second last node (temp) next should be head,
+		temp.next=head;
+		//last node (trav) will be garbage collected
+	}
+	}
+	public void delAll() {
+		 head.next=null;
+		 head=null;
+	}
 }
 
 public class SinglyListMain {
@@ -193,11 +218,11 @@ public class SinglyListMain {
 					}
 					break;
 				case 6://Del last
-//					try {
-//						list.delLast();
-//					}catch(Exception e) {
-//						System.out.println(e.getMessage());
-//					}
+					try {
+						list.delLast();
+					}catch(Exception e) {
+						System.out.println(e.getMessage());
+					}
 					break;
 				case 7://Del at pos
 					System.out.println("Enter element position");
@@ -205,7 +230,7 @@ public class SinglyListMain {
 					list.delAtPos(pos);
 					break;
 				case 8://Del all
-					//list.delAll();
+					list.delAll();
 					break;
 				default:
 					break;
