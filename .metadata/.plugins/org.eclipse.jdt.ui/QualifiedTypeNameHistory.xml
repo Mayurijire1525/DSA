@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="singly.SinglyCircularList"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="doubly.DoublyLinearList"/>
+    <fullyQualifiedTypeName name="linkedlist.SinglyList"/>
 </qualifiedTypeNameHistroy>
