@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="singlylist.SinglyList"/>
+    <fullyQualifiedTypeName name="singly.SinglyCircularList"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="doubly.DoublyLinearList"/>
 </qualifiedTypeNameHistroy>
