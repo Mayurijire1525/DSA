@@ -2,7 +2,7 @@ package queue;
 
 import java.util.Scanner;
 
-class CircularQueue {
+class CircularQueue {  
     private int[] arr;
     private int rear, front;
 
