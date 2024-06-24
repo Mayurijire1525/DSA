@@ -201,6 +201,18 @@ class BinarySearchTree {
 		}
 		return null;
 	}
+	public Node binSearch(int key) {
+		Node trav=root;
+		while(trav!=null) {
+		if(key==trav.data)
+			return trav;
+		if(key<trav.data)
+			trav=trav.left;
+		else
+			trav=trav.right;
+	}
+	return null;
+	}
 }
 
 public class BSTreeMain {
@@ -235,6 +247,13 @@ public class BSTreeMain {
 			System.out.println("DFS: Not found");
 		else
 			System.out.println("DFS found: " + temp.getData());
+		
+		System.out.println("BFS found: " + temp.getData());
+		temp = t.binSearch(val);
+		if (temp == null)
+			System.out.println("BS: Not found");
+		else
+			System.out.println("BS found: " + temp.getData());
 		
 		t.deleteAll();
 		t.inorder();
