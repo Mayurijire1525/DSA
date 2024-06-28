@@ -11,7 +11,6 @@ class CircularQueue {
         rear = -1;
         front = -1;
     }
-
     public boolean isFull() {
         return (front==-1 &&rear==arr.length-1 )||
         		(front ==rear && front!=-1);
@@ -47,12 +46,11 @@ class CircularQueue {
 }
 
 public class CircularQueueMain {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         CircularQueue s = new  CircularQueue(6);
         int choice, val;
-        do {
+        while (true) {
             System.out.println("\n0.Exit\n1.Push\n2.Pop\n3.Peek\nEnter choice");
             choice = sc.nextInt();
 
@@ -83,8 +81,8 @@ public class CircularQueueMain {
                         System.out.println(e.getMessage());
                     }
                     break;
+                 
             }
-        } while (choice != 0);
-        sc.close();
+        }
     }
 }

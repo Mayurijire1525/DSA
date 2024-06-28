@@ -10,4 +10,9 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="queue.LinearQueue"/>
     <fullyQualifiedTypeName name="bstree.BinarySearchTree"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="bstree.BinarySearchTree.Node"/>
+    <fullyQualifiedTypeName name="singly.singlylinear"/>
+    <fullyQualifiedTypeName name="singly.singlycircular"/>
 </qualifiedTypeNameHistroy>

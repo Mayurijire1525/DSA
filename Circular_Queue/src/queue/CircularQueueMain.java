@@ -2,52 +2,60 @@ package queue;
 
 import java.util.Scanner;
 
-class LinearQueue {
+class CircularQueue {
     private int[] arr;
     private int rear, front;
+    private int size;
 
-    public LinearQueue(int size) {
+    public CircularQueue(int size) {
         arr = new int[size];
+        this.size = size;
         rear = -1;
         front = -1;
     }
 
     public boolean isFull() {
-        return rear == arr.length - 1;
+        return (rear + 1) % size == front;
     }
 
     public boolean isEmpty() {
-        return rear == front;
+        return rear == -1 && front == -1;
     }
 
     public void push(int val) {
         if (isFull())
             throw new RuntimeException("Queue is full");
-        rear++;
+        if (isEmpty()) {
+            front = 0;
+        }
+        rear = (rear + 1) % size;
         arr[rear] = val;
     }
 
     public void pop() {
         if (isEmpty())
             throw new RuntimeException("Queue is empty");
-        front++;
+        if (front == rear) {
+            front = rear = -1;
+        } else {
+            front = (front + 1) % size;
+        }
     }
 
     public int peek() {
         if (isEmpty())
             throw new RuntimeException("Queue is empty");
-        return arr[front + 1];
+        return arr[front];
     }
 }
 
-public class LinearQueueMain {
+public class CircularQueueMain {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        LinearQueue s = new LinearQueue(6);
+        CircularQueue q = new CircularQueue(6);
         int choice, val;
-        boolean exit=false;
-        while(!exit)
+        do {
             System.out.println("\n0.Exit\n1.Push\n2.Pop\n3.Peek\nEnter choice");
             choice = sc.nextInt();
 
@@ -56,30 +64,30 @@ public class LinearQueueMain {
                     try {
                         System.out.println("Enter value to push");
                         val = sc.nextInt();
-                        s.push(val);
+                        q.push(val);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 2: // pop
                     try {
-                        val = s.peek();
-                        s.pop();
+                        val = q.peek();
+                        q.pop();
                         System.out.println("Popped " + val);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 3:
+                case 3: // peek
                     try {
-                        val = s.peek();
+                        val = q.peek();
                         System.out.println("Peek " + val);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                     break;
             }
-            }
-    
-    
+        } while (choice != 0);
+        sc.close();
+    }
 }

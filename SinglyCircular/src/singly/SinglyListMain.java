@@ -3,6 +3,14 @@ package singly;
 import java.util.Scanner;
 
 class SinglyCircularList {
+	// List class fields
+		private Node head;
+
+		// List class methods
+		public SinglyCircularList() {
+			head = null;
+
+		}
 	// Node class
 	static class Node {
 
@@ -22,14 +30,7 @@ class SinglyCircularList {
 		}
 	}
 
-	// List class fields
-	private Node head;
-
-	// List class methods
-	public SinglyCircularList() {
-		head = null;
-
-	}
+	
 
 	public boolean isEmpty() {
 		return head == null;

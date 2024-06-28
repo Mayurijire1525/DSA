@@ -43,7 +43,7 @@ public class SearchingMain {
 		if(index!=-1)
 			System.out.println("Key found at index "+index);
 		else
-			System.out.println("Key not found");
+			System.out.println( "Key not found");
 		int index1=recBinarySearch(arr,0,arr.length-1,key);
 		if(index!=-1)
 			System.out.println("Key found at index "+index);
